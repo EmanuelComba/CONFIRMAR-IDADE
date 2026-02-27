@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirmação de Idade</title>
+
+<!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1805883483456008');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1805883483456008&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+    url('./fundo.jpg') center/cover no-repeat;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* CARD CENTRAL */
+.container{
+    background: #1b0f0f;
+    width: 420px;
+    max-width: 95%;
+    padding: 40px 30px;
+    border-radius: 22px;
+    box-shadow: 0 0 40px rgba(255, 174, 0, 0.35);
+    border: 2px solid #ffb300;
+    text-align: center;
+    position:relative;
+}
+
+/* IMAGEM TOPO */
+.top-image{
+    width: 130px;
+    margin: 0 auto 20px auto;
+    display:block;
+}
+
+h1{
+    color:#ffcc00;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+p{
+    color:#ddd;
+    font-size:15px;
+    margin-bottom:30px;
+    line-height:1.5;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+}
+
+.btn{
+    width:100%;
+    max-width:280px;
+    padding:15px;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    transition:0.3s ease;
+    cursor:pointer;
+    border:none;
+}
+
+/* MAIOR */
+.btn-yes{
+    background: linear-gradient(45deg, #ffcc00, #ff9900);
+    color:#000;
+}
+
+.btn-yes:hover{
+    transform:scale(1.05);
+}
+
+/* MENOR */
+.btn-no{
+    background:#444;
+    color:#fff;
+}
+
+.btn-no:hover{
+    background:#666;
+}
+
+/* MENSAGEM BLOQUEIO */
+.block-message{
+    margin-top:20px;
+    padding:15px;
+    border-radius:12px;
+    background:#330000;
+    color:#ff4d4d;
+    font-weight:bold;
+    display:none;
+    animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.footer{
+    margin-top:25px;
+    font-size:12px;
+    color:#888;
+}
+
+@media(max-width:480px){
+    .container{
+        padding:30px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="IMAG/TIGER.png" class="top-image" alt="Logo">
+
+    <h1>🔞 Confirmação de Idade</h1>
+
+    <p>
+        Este site é destinado apenas para maiores de 18 anos.<br>
+        Confirme sua idade para continuar.
+    </p>
+
+    <div class="buttons">
+        <a href="https://parceria-fortuner-brasil.vercel.app/" class="btn btn-yes">
+            ✅ Tenho 18 anos ou mais
+        </a>
+
+        <button class="btn btn-no" onclick="bloquear()">
+            ❌ Tenho menos de 18 anos
+        </button>
+    </div>
+
+    <!-- Mensagem dinâmica -->
+    <div class="block-message" id="msg">
+        🚫 Você não está elegível para jogar este jogo.<br>
+        O acesso é permitido apenas para maiores de 18 anos.
+    </div>
+
+    <div class="footer">
+        Jogue com responsabilidade.
+    </div>
+
+</div>
+
+<script>
+function bloquear(){
+    document.getElementById("msg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
